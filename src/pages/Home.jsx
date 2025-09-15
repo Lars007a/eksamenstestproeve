@@ -1,3 +1,10 @@
+import Header from "../comps/header/header";
+
 export default function Home() {
-  return <p>Home</p>;
+  return (
+    <>
+      <Header />
+      <p>Home</p>;
+    </>
+  );
 }

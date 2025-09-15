@@ -1,0 +1,55 @@
+.header {
+  width: 100%;
+  height: 85vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: relative; /* så overlay child kan positioneres ved headeret */
+
+  > .overlay {
+    position: absolute; /* blive positioneret ved parrent. */
+    width: 100%;
+    height: 100%; /* tage op hele parrent. */
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.2) 60%,
+      #000000
+    ); /* min egen */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .textBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    gap: 4px;
+  }
+
+  h1,
+  h3 {
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 28px;
+  }
+  h1 {
+    font-size: 35px;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
+  }
+}
