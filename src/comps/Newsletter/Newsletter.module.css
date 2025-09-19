@@ -1,0 +1,70 @@
+.newsletter {
+  padding-block: var(--std-padding);
+  position: relative;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.88);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+
+    > form {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    > form input {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      padding-block: 14px;
+      padding-inline: 10px;
+    }
+
+    > form input[type="submit"] {
+      border: 1px solid var(--orange);
+      text-transform: uppercase;
+      font-weight: 500;
+      flex: 1;
+      cursor: pointer;
+
+      color: var(--orange);
+      transition: background-color 0.2s, color 0.2s;
+
+      &:hover {
+        background-color: var(--orange);
+        color: var(--white);
+      }
+    }
+
+    > form input[type="email"] {
+      border: 1px solid var(--grey);
+      color: var(--white);
+      border-right: 0px;
+      flex: 2;
+      transition: border 0.2s, color 0.2s;
+
+      &::placeholder {
+        color: var(--grey);
+      }
+      &:focus {
+        border-color: var(--orange);
+      }
+    }
+  }
+}

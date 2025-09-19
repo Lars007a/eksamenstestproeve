@@ -1,0 +1,120 @@
+nav.nav {
+  width: 100%;
+
+  background-color: var(--black);
+
+  padding-block: calc(var(--std-padding) * 0.5);
+
+  .content {
+    width: 100%; /* 100% af container */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* så langt væk fra hinanden */
+    align-items: center; /* centrer vertikalt */
+  }
+
+  &.active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    /*     padding-block: 60px; */
+  }
+
+  &.active .content {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &.active .content .hamburger {
+    align-self: flex-end;
+  }
+
+  &.active .fullscreen {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--std-padding) * 0.5);
+    list-style-type: none;
+
+    padding-top: 30px;
+
+    @media (min-width: 650px) {
+      padding-top: 60px;
+    }
+
+    > li {
+    }
+
+    > li a {
+      text-decoration: none;
+      color: var(--white);
+      font-weight: 600;
+      text-transform: uppercase;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--orange);
+      }
+
+      &.active {
+        color: var(--orange);
+      }
+
+      @media (min-width: 650px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  .logoBox {
+    > a {
+      text-decoration: none;
+      img {
+        height: 32px;
+        width: auto;
+      }
+    }
+  }
+
+  .hamburger {
+    cursor: pointer;
+    > .line {
+      height: 3px;
+      width: 32px;
+      background-color: var(--orange);
+      transition: 0.3s;
+
+      &:has(+ .line) {
+        margin-bottom: 8px;
+      }
+
+      &:nth-child(2) {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  .hamburger.active {
+    /*     animation-name: hmbClick;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear; */
+
+    > .line:nth-child(1) {
+      transform: translateY(11px) rotate(45deg);
+    }
+
+    > .line:nth-child(2) {
+      opacity: 0;
+    }
+
+    > .line:nth-child(3) {
+      transform: translateY(-11px) rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.box {
+  padding-block: 15px;
+  padding-inline: 12px;
+
+  background-color: rgb(146, 30, 30);
+
+  width: 100%;
+
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+
+  &.animate {
+    animation-name: slideIn;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+  }
+
+  > p {
+    color: var(--white);
+    text-align: center;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

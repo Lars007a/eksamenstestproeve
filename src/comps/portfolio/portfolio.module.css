@@ -1,0 +1,81 @@
+.portfolio {
+  padding-block: var(--std-padding);
+  background-color: var(--secondaryBlack);
+
+  .content {
+    .textSec {
+      display: flex;
+      flex-direction: column;
+      gap: var(--std-gap);
+      font-weight: 600;
+    }
+
+    .slideShow {
+      margin-bottom: var(--std-padding);
+      position: relative;
+    }
+
+    .pag {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: var(--std-gap);
+
+      padding-block-start: var(--std-padding);
+      @media (min-width: 800px) {
+        display: none;
+      }
+    }
+
+    .pagbullet {
+      background-color: var(--grey);
+      cursor: pointer;
+      height: 25px;
+      width: 25px;
+      border-radius: 100%;
+    }
+    .pagactive {
+      background-color: var(--orange);
+    }
+
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(
+        -50%
+      ); /* Når positioner, så top 50%, og translatey -50% ville få center. */
+      z-index: 3;
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 55px;
+      width: 55px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      > svg {
+        cursor: pointer;
+        color: var(--orange);
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+    .nextEl {
+      right: 0%;
+      @media (min-width: 800px) {
+        display: none;
+      }
+    }
+
+    .prevEl {
+      left: 0%;
+      @media (min-width: 800px) {
+        display: none;
+      }
+    }
+  }
+}

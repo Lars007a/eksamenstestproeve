@@ -1,0 +1,124 @@
+.form {
+  padding-top: var(--std-padding);
+  .intro {
+    margin-bottom: var(--std-padding);
+    > h2,
+    > h3 {
+      text-align: start;
+      text-transform: uppercase;
+    }
+
+    > h2 {
+      margin-bottom: var(--std-gap);
+    }
+
+    > p {
+    }
+  }
+
+  .formSec {
+    position: relative; /* så overlayet kan positioneres relativt til denne ting. */
+
+    .overlay {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      object-fit: cover;
+      filter: opacity(100%);
+      position: absolute; /* positioneret abselut ifht parrent, formsec, den der holder contact og formen selv. */
+      inset: 0; /* fylder hele formsec ud. */
+      z-index: 1; /* z-index på 1. */
+    }
+
+    .contactSec {
+      position: relative; /* relativt til sig selv. Bare så jeg kan bruge z-index, mener jeg. */
+      z-index: 2; /* z-index 2, over overlayet. */
+      display: flex;
+      flex-direction: column;
+      gap: var(--std-gap);
+      margin-bottom: var(--std-padding);
+
+      word-break: break-all;
+
+      @media (min-width: 750px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+      }
+    }
+
+    .contactSec > div {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: var(--std-gap);
+    }
+
+    .contactSec > div > svg {
+      color: var(--orange);
+      height: 35px;
+      width: auto;
+    }
+
+    form {
+      position: relative; /* relativt til sig selv. Bare så jeg kan bruge z-index, mener jeg. */
+      z-index: 2; /* z-index 2, over overlayet. */
+      display: flex;
+      flex-direction: column;
+      gap: var(--std-gap);
+      padding-bottom: var(--std-padding);
+    }
+
+    form > input,
+    form > textarea {
+      width: 100%;
+      padding-block: 12px;
+      padding-inline: 12px;
+    }
+
+    form > input[type="text"]::placeholder,
+    textarea::placeholder {
+      text-transform: uppercase;
+      text-align: start;
+      color: var(--grey);
+    }
+
+    form > input[type="text"],
+    textarea {
+      border-style: solid;
+      border-color: var(--grey);
+      border-width: 0px 0px 1px 1px;
+      background-color: transparent;
+      outline: none;
+      color: var(--white);
+      transition: border 0.2s;
+    }
+
+    form > input[type="submit"] {
+      background-color: transparent;
+      border: 2px solid var(--orange);
+      text-align: center;
+      color: var(--orange);
+      font-weight: 600;
+      transition: background-color 0.2s, color 0.2s, border 0.2s;
+    }
+
+    form > input[type="text"]:focus,
+    form > textarea:focus {
+      border-color: var(--orange);
+    }
+
+    form > textarea {
+      min-height: 300px;
+      resize: vertical;
+    }
+
+    form > input[type="submit"]:hover {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+  }
+}

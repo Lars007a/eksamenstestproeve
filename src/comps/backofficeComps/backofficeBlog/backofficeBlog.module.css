@@ -1,0 +1,89 @@
+.page {
+  > .forms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--std-padding);
+    padding-top: 20px;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+    }
+  }
+
+  > .forms form {
+    flex: 1;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--std-gap);
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    label {
+      color: var(--white);
+    }
+
+    input:is(:not(input[type="file"])),
+    textarea {
+      width: 100%;
+      padding-block: 12px;
+      padding-inline: 12px;
+    }
+
+    input[type="text"]::placeholder,
+    textarea::placeholder {
+      text-transform: uppercase;
+      text-align: start;
+      color: var(--grey);
+    }
+
+    input[type="text"],
+    textarea {
+      border-style: solid;
+      border-color: var(--grey);
+      border-width: 1px 1px 1px 1px;
+      background-color: transparent;
+      outline: none;
+      color: var(--white);
+      transition: border 0.2s;
+    }
+
+    input[type="submit"],
+    input::file-selector-button {
+      width: 100%;
+      background-color: transparent;
+      border: 1px solid var(--orange);
+      text-align: center;
+      color: var(--orange);
+      font-weight: 600;
+      transition: background-color 0.2s, color 0.2s, border 0.2s;
+      cursor: pointer;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: var(--orange);
+    }
+
+    textarea {
+      min-height: 200px;
+      resize: vertical;
+    }
+
+    input[type="submit"]:hover {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+  }
+}

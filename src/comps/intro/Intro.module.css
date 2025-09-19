@@ -1,0 +1,64 @@
+.Introsec {
+  padding-block: var(--std-padding);
+  background-color: var(--black);
+
+  video {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    margin-bottom: 15px;
+
+    @media (min-width: 750px) {
+      display: block;
+      width: 75%;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 1000px) {
+      width: 50%;
+      margin: 0 auto;
+      margin-bottom: 25px;
+    }
+  }
+
+  .ide {
+    padding-bottom: var(--std-padding);
+
+    > .title {
+      text-align: start;
+      text-transform: uppercase;
+      margin-bottom: var(--std-gap);
+    }
+  }
+
+  .whyUs {
+    padding-bottom: var(--std-padding);
+    h3 {
+      text-transform: uppercase;
+      text-align: start;
+      margin-bottom: var(--std-gap);
+      /*       font-size: 20px; */
+    }
+  }
+
+  .stats {
+    padding-bottom: var(--std-padding);
+
+    > .stat {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    > .stat h2 {
+      color: var(--orange);
+      margin-bottom: 4px;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .stat p {
+      font-weight: 600;
+      font-size: 20px;
+    }
+  }
+}

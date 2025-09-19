@@ -1,0 +1,41 @@
+.blogsec {
+  padding-block: var(--std-padding);
+  background-color: var(--secondaryBlack);
+
+  &.blackBackground {
+    background-color: var(--black);
+  }
+
+  .intro {
+    text-align: start;
+    text-transform: uppercase;
+    margin-bottom: var(--std-padding);
+  }
+
+  .intro h2 {
+    margin-bottom: var(--std-gap);
+  }
+
+  .intro > p {
+    text-transform: none;
+  }
+
+  .blogContainer {
+    width: 100%;
+
+    @media (min-width: 750px) {
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    @media (min-width: 1000px) {
+      width: 50%;
+      margin: 0 auto;
+    }
+    &:has(article + article) {
+      display: flex;
+      flex-direction: column;
+      gap: var(--std-padding);
+    }
+  }
+}

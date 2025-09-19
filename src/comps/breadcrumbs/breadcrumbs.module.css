@@ -1,0 +1,27 @@
+.breadcrumbs {
+  text-decoration: none;
+  > p {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--white);
+    display: inline-block; /* ellers kommer p og pseudo elementet ikke til at være på samme linje. */
+  }
+
+  &:has(+ a)::after {
+    content: "/";
+    display: inline-block; /* ellers kommer pseudo elementet og p tagget ikke på samme linje. */
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--white);
+    margin-inline: 12px;
+  }
+
+  &.orange:has(+ a)::after {
+    color: var(--orange);
+  }
+
+  &.orange > p {
+    color: var(--orange);
+  }
+}

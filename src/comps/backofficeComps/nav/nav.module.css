@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: var(--std-padding);
+  list-style-type: none;
+  padding-block: 10px;
+
+  > li,
+  button {
+    flex: 1;
+  }
+
+  > li {
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--white);
+    transition: color 0.2s;
+  }
+
+  > li:hover {
+    color: var(--orange);
+  }
+}

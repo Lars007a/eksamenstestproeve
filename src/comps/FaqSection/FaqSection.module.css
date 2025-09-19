@@ -1,0 +1,13 @@
+.sec {
+  background-color: var(--black);
+  padding-block: var(--std-padding);
+
+  .content {
+  }
+
+  .con {
+    display: flex;
+    flex-direction: column;
+    gap: var(--std-padding);
+  }
+}

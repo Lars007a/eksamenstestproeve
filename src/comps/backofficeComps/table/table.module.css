@@ -1,0 +1,51 @@
+.tableCon {
+  overflow-x: auto;
+  table {
+    width: 100%;
+    border-collapse: collapse; /* så der ikke er et lille mellemrum */
+  }
+
+  table img {
+    height: 50px;
+    width: auto;
+    object-fit: cover;
+  }
+
+  table thead {
+    background-color: var(--black);
+    color: var(--white);
+  }
+
+  th,
+  td {
+    padding: 8px 5px;
+    text-align: left;
+  }
+
+  td div {
+    max-height: 100px;
+    overflow: hidden;
+  }
+
+  tbody th,
+  tbody td {
+    border: 1px solid var(--grey);
+    color: var(--white);
+  }
+
+  tbody svg {
+    height: 18px;
+    width: auto;
+    color: var(--white);
+    cursor: pointer;
+  }
+
+  tbody svg:hover {
+    color: var(--secondaryBlack);
+  }
+
+  tbody tr:nth-child(even) {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+}

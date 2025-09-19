@@ -1,0 +1,44 @@
+.card {
+  padding-block: 20px;
+  padding-inline: 15px;
+  background-color: var(--secondaryBlack);
+
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+
+  .top {
+    > svg {
+      color: #dcb036;
+      height: 25px;
+      width: auto;
+    }
+  }
+
+  .middle {
+    p {
+      font-weight: 300;
+      font-size: 16px;
+    }
+  }
+
+  .byline {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    > .title {
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--white);
+    }
+
+    > .name {
+      font-weight: 500;
+      font-size: 16px;
+      color: var(--orange);
+    }
+  }
+}

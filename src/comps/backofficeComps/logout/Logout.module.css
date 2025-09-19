@@ -1,0 +1,17 @@
+.btn {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid var(--orange);
+  text-align: center;
+  color: var(--orange);
+  font-weight: 600;
+  transition: background-color 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+  padding-block: 12px;
+  padding-inline: 12px;
+
+  &:hover {
+    background-color: var(--orange);
+    color: var(--white);
+  }
+}

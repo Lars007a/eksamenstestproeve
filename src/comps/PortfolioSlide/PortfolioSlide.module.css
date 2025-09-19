@@ -1,0 +1,10 @@
+.slide {
+  background-color: blueviolet;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  aspect-ratio: 3/2;
+}

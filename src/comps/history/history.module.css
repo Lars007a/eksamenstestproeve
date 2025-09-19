@@ -1,0 +1,4 @@
+.sec {
+  padding-block: var(--std-padding);
+  background-color: var(--black);
+}

@@ -1,78 +1,103 @@
 footer.footer {
   background-color: var(--black);
-  padding-block: var(--std-padding);
+  padding-block-start: var(--std-padding);
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    gap: calc(var(--std-gap) * 1.5);
+  .title {
+    text-align: center;
+    text-transform: uppercase;
+  }
 
-    .titleBox {
+  .title:has(+ .title) {
+    margin-bottom: var(--std-gap);
+  }
+
+  .title + .title {
+    margin-bottom: var(--std-gap);
+  }
+
+  .socialBox {
+    > ul {
+      list-style-type: none;
+      display: block;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin-bottom: var(--std-gap);
+
+      @media (min-width: 800px) {
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+    }
+
+    li {
+      flex: 50%;
+      padding: var(--std-gap);
       text-align: center;
       text-transform: uppercase;
-
-      h2:has(+ h2) {
-        margin-bottom: var(--std-gap);
-      }
+      font-weight: 400;
     }
 
-    .contactBox {
-      text-align: center;
-      font-weight: 600;
+    a {
+      text-decoration: none;
+      color: var(--white);
 
-      p:has(+ p) {
-        margin-bottom: 5px;
-      }
-    }
-
-    .socialBox {
-      > ul {
-        list-style-type: none;
-        display: block;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-
-        @media (min-width: 800px) {
-          flex-direction: row;
-          flex-wrap: nowrap;
-        }
-      }
-
-      li {
-        flex: 50%;
-        padding: var(--std-gap);
-        text-align: center;
-        text-transform: uppercase;
-        font-weight: 400;
-      }
-
-      a {
-        text-decoration: none;
-        color: var(--white);
-
-        &:hover {
-          color: var(--orange);
-        }
-      }
-    }
-
-    .bottom {
-      padding-top: calc(var(--std-padding) * 2);
-
-      > img {
-        display: block; /* ellers virker margin: 0 auto ikke! Ikke på inline eller inline-block elementer */
-        width: 200px;
-        height: auto;
-        margin: 0 auto;
-        margin-bottom: calc(var(--std-gap) * 2);
-      }
-
-      > .text {
-        text-transform: uppercase;
-        font-weight: 300;
-        text-align: center;
+      &:hover {
+        color: var(--orange);
       }
     }
   }
+
+  .contactBox {
+    text-align: center;
+    font-weight: 500;
+    margin-bottom: var(--std-gap);
+
+    p:has(+ p) {
+      margin-bottom: 6px;
+    }
+  }
+
+  .bottom {
+    padding-block-start: var(--std-gap);
+    padding-block-end: var(--std-padding);
+    position: relative;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+      z-index: 1;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.88);
+    }
+
+    img {
+      position: relative;
+      z-index: 2;
+      display: block; /* ellers virker margin: 0 auto ikke! Ikke på inline eller inline-block elementer */
+      width: 200px;
+      height: auto;
+      margin: 0 auto;
+      margin-bottom: calc(var(--std-gap) * 2);
+    }
+
+    .text {
+      position: relative;
+      z-index: 2;
+      text-transform: uppercase;
+      font-weight: 300;
+      text-align: center;
+    }
+  }
+}
+
+.orangeText {
+  color: var(--orange);
 }

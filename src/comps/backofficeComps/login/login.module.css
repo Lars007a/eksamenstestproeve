@@ -1,0 +1,43 @@
+.loginForm {
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--std-gap);
+
+  input {
+    flex: 1;
+    outline: none;
+    padding-block: 14px;
+    padding-inline: 10px;
+    background-color: transparent;
+  }
+
+  > input[type="submit"] {
+    border: 1px solid var(--orange);
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    color: var(--orange);
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+  }
+
+  > input[type="email"],
+  > input[type="password"] {
+    border: 1px solid var(--grey);
+    color: var(--white);
+    transition: border 0.2s, color 0.2s;
+
+    &::placeholder {
+      color: var(--grey);
+    }
+    &:focus {
+      border-color: var(--orange);
+    }
+  }
+}

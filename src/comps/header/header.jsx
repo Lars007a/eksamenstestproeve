@@ -1,23 +1,42 @@
 import styles from "./Header.module.css";
-import BackroundBg from "../../assets/studio.jpg";
 
-export default function header({}) {
+export default function header({
+  title,
+  subtitle,
+  thirdTitle,
+  text,
+  frontpage = true,
+  img,
+  children,
+}) {
   return (
     <header
-      className={styles.header}
-      style={{ backgroundImage: `url(${BackroundBg})` }}
+      className={`${styles.header} ${
+        frontpage ? "" : styles.otherPage
+      }`} /* hvis ikke frontpage, giv en anden klasse. */
+      /* tag ind billedet vi har fået givet. */
+      style={{ "--bg": `url(${img})` }}
     >
-      <div className={styles.overlay}>
-        <div className="container">
+      <div className="container">
+        <div className={styles.content}>
           <article className={styles.textBox}>
-            <h3>cinestar studio</h3>
-            <h1>Film og TV</h1>
-            <h1 className="orangeText">Produktion</h1>
-            <p>
-              Vi skaber levende fortællinger, der fanger dit publikum. Fra idé
-              til færdigt produkt leverer vi professionelle film- og
-              tv-løsninger, der gør din historie uforglemmelig.
-            </p>
+            {/* hvis elementerne der skal vises på forsiden. */}
+            {frontpage && <h3>{thirdTitle}</h3>}
+            <h1>{title}</h1> {/* title skal vises på alle sider. */}
+            {frontpage && (
+              <>
+                <h1 className={styles.orange}>{subtitle}</h1>
+                <p>{text}</p>
+              </>
+            )}
+            {/* kun giv breadcrumbs på andre sider end frontpage. */}
+            {frontpage == false ? (
+              <div className={styles.breadcrumbs}>
+                {children}
+              </div> /* Breadcrumbs er passed in som children components.  */
+            ) : (
+              ""
+            )}
           </article>
         </div>
       </div>
